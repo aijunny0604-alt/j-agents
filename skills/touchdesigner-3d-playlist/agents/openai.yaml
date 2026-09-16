@@ -1,0 +1,6 @@
+interface:
+  display_name: "터치디자이너로 3D 플레이리스트 만들기"
+  short_description: "크롬 입체 로고와 실제 음원 동기화로 반복 가능한 3D 플레이리스트 제작"
+  default_prompt: "$touchdesigner-3d-playlist 스킬로 제공한 로고·커버·음원을 사용해 입체 크롬 로고와 실제 재생 바, 스펙트럼이 있는 TouchDesigner 플레이리스트를 제작해줘."
+policy:
+  allow_implicit_invocation: true
