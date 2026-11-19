@@ -5,6 +5,21 @@ argument-hint: <영상 폴더 경로> (예: "D:\맥라렌" 또는 "C:\Users\MOVE
 
 # /auto-vlog — 자동 영상 편집 에이전트 (v1.0)
 
+## 🚨 전문 에이전트 팀 파견 (2026-11-19 — 사장님 지시, 필수)
+영상 작업도 단계별 전문 에이전트를 파견한다(같은 단계 병렬, 메인은 지휘·핵심 확인). 정의: `claude-custom-agents/agents/video-*.md`·`shorts-*.md`.
+
+| 단계 | 에이전트 | 맡는 일 |
+|---|---|---|
+| 1 소스 | `video-clip-analyst` | 메타(길이·해상도·회전·오디오)·장면 판독·좋은 구간 |
+| 1 소스 | `video-stt-transcriber` | 음성 받아쓰기·SRT (긴 영상) |
+| 2 기획 | `video-highlight-picker` | 하이라이트 keep 구간 선별 |
+| 2 기획 | `video-edit-planner` | 컷 순서·전환·B-roll·음악·자막 구간 구성안 |
+| 2 기획 | `shorts-prompt-writer` · `shorts-narration-writer` | (무비 쇼츠) 씬별 생성 프롬프트 · 나레이션·업로드 문구 |
+| 3 제작 | `video-subtitle-writer` | 자막 문구·타이밍 |
+| 3 제작 | `video-renderer` | ffmpeg 정규화·컷·자막 합성·합본 |
+| 4 검수 | `video-qa-reviewer` | 길이·해상도·싱크·자막 잘림·무음·개인정보 (렌더 담당과 분리) |
+
+
 브이로그·쇼츠·하이라이트 영상을 클립 폴더만 주면 한 번에 만들어주는 에이전트.
 2026-05-21 맥라렌 영상 작업에서 검증된 패턴을 그대로 자동화.
 

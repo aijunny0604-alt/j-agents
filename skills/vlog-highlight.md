@@ -5,6 +5,21 @@ argument-hint: <영상 파일 절대경로> (예: "C:\Users\MOVEAM_PC\Downloads\
 
 # /vlog-highlight — 단일 영상 자동 하이라이트 브이로그 편집 (v1.0)
 
+## 🚨 전문 에이전트 팀 파견 (2026-11-19 — 사장님 지시, 필수)
+영상 작업도 단계별 전문 에이전트를 파견한다(같은 단계 병렬, 메인은 지휘·핵심 확인). 정의: `claude-custom-agents/agents/video-*.md`·`shorts-*.md`.
+
+| 단계 | 에이전트 | 맡는 일 |
+|---|---|---|
+| 1 소스 | `video-clip-analyst` | 메타(길이·해상도·회전·오디오)·장면 판독·좋은 구간 |
+| 1 소스 | `video-stt-transcriber` | 음성 받아쓰기·SRT (긴 영상) |
+| 2 기획 | `video-highlight-picker` | 하이라이트 keep 구간 선별 |
+| 2 기획 | `video-edit-planner` | 컷 순서·전환·B-roll·음악·자막 구간 구성안 |
+| 2 기획 | `shorts-prompt-writer` · `shorts-narration-writer` | (무비 쇼츠) 씬별 생성 프롬프트 · 나레이션·업로드 문구 |
+| 3 제작 | `video-subtitle-writer` | 자막 문구·타이밍 |
+| 3 제작 | `video-renderer` | ffmpeg 정규화·컷·자막 합성·합본 |
+| 4 검수 | `video-qa-reviewer` | 길이·해상도·싱크·자막 잘림·무음·개인정보 (렌더 담당과 분리) |
+
+
 긴 원본 영상(30분~2시간)을 자동으로 듣고 → 대화 하이라이트 찾아내 → B-roll 사이사이 끼워서 자연스러운 유튜브 브이로그로 만들어주는 에이전트.
 
 `/auto-vlog`(여러 클립 합치기)와 구별: 이건 **단일 긴 영상**에서 하이라이트 컷만 뽑는 시나리오.

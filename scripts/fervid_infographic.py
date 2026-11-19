@@ -65,8 +65,10 @@ def wrap(d, text, f, maxw):
     return lines
 
 
+LOGO_SAFE = 400   # _upload 단계에서 좌상단에 사진 가로 22% 로고가 합성됨 → 제목은 좌우 400px 안쪽에만
+
 def header(d, spec, y=70):
-    d.text((W/2, y), spec["title"], font=fit(d, spec["title"], F_HEAD, 64, W-500), fill=INK, anchor="mm")
+    d.text((W/2, y), spec["title"], font=fit(d, spec["title"], F_HEAD, 64, W-2*LOGO_SAFE), fill=INK, anchor="mm")
     if spec.get("subtitle"):
         d.text((W/2, y+65), spec["subtitle"], font=fit(d, spec["subtitle"], F_R, 30, W-200), fill=GREY, anchor="mm")
     return y + 140
